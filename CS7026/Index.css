@@ -1,0 +1,688 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  font-size: 12px;
+
+}
+
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+input,
+button {
+  border: none;
+}
+
+
+nav {
+  width: 500px;
+  height: 56px;
+  display: flex;
+  text-align: center;
+  padding: 8px 10px;
+  font-size: 16px;
+  border-radius: 28px;
+  border: 1px solid rgb(218, 218, 218);
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 auto;
+  margin-top: 70px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #8f8f8f;
+
+  transition: .3s;
+
+}
+
+nav a:hover {
+
+  /* font-size: 14px; */
+  color: rgb(106, 113, 223);
+
+}
+
+nav a.contact {
+  width: 120px;
+  height: 100%;
+  background-color: black;
+  color: white;
+  border-radius: 99px;
+  padding: 10px;
+
+}
+
+nav a.contact:hover {
+
+  background-color: rgb(119, 119, 119);
+}
+
+
+nav img {
+  display: block;
+  border-radius: 100px;
+}
+
+.section1 {
+
+  width: 80%;
+  height: 100vh;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  font-size: 40px;
+  font-weight: bold;
+  font-family: "Antonio", "Antonio Placeholder", sans-serif;
+}
+
+
+.title,
+.title2 {
+  /* width: 100%; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  /* align-items: center; */
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(blue 20%, white);
+}
+
+.clear {
+  height: 63px;
+  width: 63px;
+  /* border: 1px solid black; */
+}
+
+.title2 p {
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(blue, white);
+}
+
+.box {
+  overflow: hidden;
+  position: relative;
+  /* width: 100%; */
+  height: 700px;
+  border-radius: 48px;
+}
+
+.container1 {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.container1 img {
+  max-width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 40px;
+
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  padding: 10px;
+}
+
+.container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200%;
+  background: linear-gradient(213deg, #b0b8b2, #fad648, #a767e5, #12bcfe, #44ce7b);
+  background-size: 100% 50%;
+  animation: move 1s linear infinite;
+
+}
+
+.container:hover::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200%;
+  background: linear-gradient(183deg, white, #12bcfe, rgb(158, 158, 196), #12bcfe, white);
+  background-size: 100% 50%;
+  animation: move .75s linear infinite;
+
+}
+
+
+@keyframes move {
+  to {
+    transform: translateY(-50%);
+  }
+}
+
+.title p {
+  font-size: 20px;
+  font-weight: 400px;
+  line-height: 1.3em;
+  color: black;
+
+}
+
+.title2 {
+  text-align: right;
+  background-image: linear-gradient(to bottom, blue, white);
+}
+
+.title2 p {
+  font-size: 16px;
+  font-weight: normal;
+  color: #8f8f8f;
+}
+
+/* ------------------------- */
+/* Flip Card (Home Page)     */
+/* ------------------------- */
+.flip-card {
+  width: 350px;
+  height: 450px;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Front */
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  backface-visibility: hidden;
+  overflow: hidden;
+}
+
+/* Front side (image) */
+.flip-card-front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Back side */
+.flip-card-back {
+  background: linear-gradient(135deg, #6a71df, #8f93f8);
+  color: white;
+  transform: rotateY(180deg);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  text-align: center;
+  border-radius: 20px;
+}
+
+.flip-card-back h2 {
+  font-size: 28px;
+  font-family: "Antonio", sans-serif;
+}
+
+.flip-card-back p {
+  font-size: 16px;
+  line-height: 1.5em;
+  font-family: "Inter", sans-serif;
+}
+
+/* Button */
+.flip-btn {
+  display: inline-block;
+  margin: 0 auto;
+  padding: 12px 20px;
+  background: white;
+  color: #6a71df;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.flip-btn:hover {
+  background: #d9dcff;
+}
+
+/* ----------------------------- */
+/* 📱 RWD for Home Page          */
+/* ----------------------------- */
+
+@media (max-width: 768px) {
+  nav {
+    width: 90%;
+    height: auto;
+    padding: 10px 20px;
+    font-size: 14px;
+    margin-top: 20px;
+    gap: 10px;
+  }
+
+  nav img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .section1 {
+    flex-direction: column;
+    height: auto;
+    text-align: center;
+    width: 100%;
+    padding: 20px;
+    gap: 30px;
+  }
+
+  .title {
+    align-items: center;
+  }
+
+  .title p {
+    font-size: 16px;
+  }
+
+  .title h2 {
+    font-size: 40px;
+  }
+
+  .title2 {
+    align-items: center;
+    text-align: center;
+  }
+
+  .title2 h2 {
+    font-size: 40px;
+  }
+
+  .title2 p {
+    font-size: 14px;
+  }
+
+  .box {
+    width: 90%;
+    height: 380px;
+    border-radius: 32px;
+  }
+
+  .container1 img {
+    height: 100%;
+    border-radius: 24px;
+  }
+
+  footer p {
+    font-size: 10px;
+    text-align: center;
+    padding: 20px 0;
+  }
+}
+
+/* ABOUT PAGE */
+
+.About-section {
+
+  font-family: "Antonio", "Antonio Placeholder", sans-serif;
+  color: rgb(48, 48, 48);
+  width: 1200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 100px auto;
+
+}
+
+.leftside {
+  width: 560px;
+  padding: 0 20px;
+}
+
+.leftside h1 {
+  font-size: 120px;
+  letter-spacing: -0.03em;
+  font-weight: 700;
+}
+
+.leftside h3 {
+  font-size: 32px;
+  font-weight: 400;
+}
+
+.leftside p {
+  font-family: "Inter", "Inter Placeholder", sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.leftside .desc {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.rightside {
+  width: 340px;
+  border-radius: 20px;
+  overflow: hidden;
+  padding: 40px;
+}
+
+.rightside img {
+  width: 100%;
+  border-radius: inherit;
+}
+
+.icon i {
+  font-size: 20px;
+
+}
+
+/* Project page */
+.outsidewrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  width: 1200px;
+
+}
+
+.container-wrapper {
+  margin-bottom: 20px;
+}
+
+.container-wrapper h1 {
+  font-size: 120px;
+  letter-spacing: -0.03em;
+  color: #303030;
+  font-family: "Antonio", "Antonio Placeholder", sans-serif
+}
+
+.container-wrapper p {
+  font-size: 18px;
+  font-family: "Inter", "Inter Placeholder", sans-serif;
+  font-weight: 300;
+  color: rgb(30, 30, 30);
+  width: 50%;
+}
+
+.container-project {
+  display: flex;
+  flex-direction: column;
+  gap: 20px
+}
+
+
+/* JS 動態生成的 Project Card */
+.project-card {
+  width: 1200px;
+  height: 750px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+/* Project 卡片內容 */
+.project-card-content {
+  color: white;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  max-width: 60%;
+}
+
+.project-card-content h1 {
+  font-size: 60px;
+  font-weight: 700;
+}
+
+.project-card-content p {
+  font-size: 18px;
+  font-family: "Inter", "Inter Placeholder", sans-serif;
+}
+
+/* ----- 展開模式 Expand Mode ------ */
+
+.project-card.expanded {
+  width: 100%;
+  height: 90vh;
+  transform: scale(1.02);
+  transition: 0.6s ease;
+  border-radius: 40px;
+  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.35);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.project-card.expanded .project-card-content h1 {
+  font-size: 80px;
+  transition: 0.4s;
+}
+
+.project-card.expanded .project-card-content p {
+  font-size: 24px;
+  max-width: 70%;
+  transition: 0.4s;
+}
+
+/* 避免內容貼邊 */
+.project-card.expanded {
+  padding: 40px;
+}
+
+/* .project {
+  width: 1200px;
+  height: 750px;
+  background-image: url(./img/w08JBQPFYIq2vr4OfcD9W6vxEug.avif);
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+
+} */
+
+/* .project2 {
+  width: 1200px;
+  height: 750px;
+  background-image: url(./img/nTU7b0ZAdWdlqCI4mQ4tGTPpDs.avif);
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  background-size: cover;
+  align-items: center;
+  border-radius: 20px;
+} */
+
+/* .project3 {
+  width: 1200px;
+  height: 750px;
+  background-image: url(./img/qbjsnnvP9w7UaA2syp36oUe8OSo.avif);
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+} */
+
+/* .project1-title {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+} */
+
+/* .project1-title h1 {
+  font-size: 60px;
+  font-style: normal;
+  font-weight: 700;
+} */
+
+/* Contact page*/
+
+.outwrapper {
+  display: flex;
+  width: 1200px;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: space-around;
+  padding: 120px 40px;
+  gap: 20px
+}
+
+.leftbox {
+  width: 50%;
+  border-radius: 20px;
+  width: 300px;
+  overflow: hidden;
+}
+
+.leftbox img {
+  width: inherit;
+}
+
+.rightbox {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  gap: 20px;
+}
+
+.rightbox label {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: #6a71df;
+}
+
+.labelbox {
+  display: flex;
+  gap: 10px
+}
+
+.contact-input {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-title {
+  display: flex;
+  flex-direction: column;
+  gap: 20px
+}
+
+.contact-title h2 {
+  font-size: 60px;
+}
+
+.contact-title p {
+  font-size: 18px;
+  font-family: "Inter", "Inter Placeholder", sans-serif;
+  font-size: 18px;
+  color: #303030;
+}
+
+.rightbox label input {
+  width: 270px;
+  height: 43px;
+  background-color: #f5f5f5;
+  border-radius: 99px;
+  padding: 12px 20px;
+  color: rgb(48, 48, 48);
+  font-size: 16px;
+  font-weight: 300;
+}
+
+.labelSelect select {
+  width: 100%;
+  height: 43px;
+  background-color: #f5f5f5;
+  border-radius: 99px;
+  padding: 12px 20px;
+  /* color: rgb(48, 48, 48); */
+  font-size: 16px;
+  font-weight: 300;
+  border: none;
+}
+
+
+
+
+.contact-textarea textarea {
+  width: 100%;
+  height: 140px;
+  background-color: #f5f5f5;
+  border: none;
+  border-radius: 12px;
+  padding: 20px;
+  font-family: "Inter";
+  font-size: 16px;
+  /* color: rgb(48, 48, 48); */
+}
+
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 50px;
+  border-color: rgb(106, 113, 223);
+  color: rgb(106, 113, 223);
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px rgb(106, 113, 223) solid;
+  border-radius: 99px;
+  opacity: 1;
+  font-size: 16px;
+  transition: .3s;
+  margin-bottom: 20px;
+}
+
+.button:hover {
+  background-color: rgb(106, 113, 223);
+  color: white;
+  cursor: pointer;
+}
