@@ -4,21 +4,22 @@ Projects Page — Overview
 
 The Projects page showcases an interactive gallery of my featured design and development works. Instead of using static HTML, the entire section is generated through JavaScript to ensure scalability, structure, and data-driven rendering.
 
-What I Built
-1. Dynamic Project Rendering (Data-Driven UI)
+<h3>What I Built</h3>
+
+<h4>A. Project Rendering</h4>
 
 I created a  data.js file that stores all project information, including titles, descriptions, and image paths.
 The script.js file loads this data and generates each project card via DOM manipulation.
 
-2. Reusable Component Function
+<h4>B. Reusable Component Function</h4>
 
 I implemented a createProjectCard() function that builds each project card using JavaScript.
 
-3. OOP Architecture with a Portfolio Class
+<h4>C. OOP Architecture with a Portfolio Class</h4>
 
 To demonstrate abstraction and better code organization, I created a Portfolio class responsible for rendering all cards.
 
-4. Interactive Expand Mode (State Toggle)
+<h4>D. Interactive Expand Mode (State Toggle)</h4>
 
 A dedicated button allows users to switch between:
 
@@ -34,6 +35,6 @@ Conditional rendering
 
 Dynamic class switching (e.g., .expanded)
 
-Smooth CSS animations
+CSS animations
 
-The expanded mode enlarges the first project card, increases typography size, and adds a shadow/scale effect for a more immersive viewing experience.
+The expanded mode enlarges the first project card, increases typography size, and adds a shadow/scale effect.
